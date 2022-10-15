@@ -1,0 +1,84 @@
+DROP DATABASE IF EXISTS wholesale_business;
+CREATE DATABASE IF NOT EXISTS wholesale_business;
+
+USE wholesale_business;
+
+--
+-- Table structure for table Customer
+--
+
+DROP TABLE IF EXISTS Customer;
+
+CREATE TABLE Customer (
+	custID VARCHAR(6) NOT NULL,
+	custTitle VARCHAR(5) DEFAULT NULL,
+	custName VARCHAR(30) NOT NULL,
+	custAddress VARCHAR(30) DEFAULT NULL,
+	city VARCHAR(20) DEFAULT NULL,
+	province VARCHAR(20) DEFAULT NULL,
+	postalCode VARCHAR(9) DEFAULT NULL,
+  	CONSTRAINT PRIMARY KEY (custID)
+);
+
+--
+-- Dumping data for table Customer
+--
+
+--
+-- Table structure for table Item
+--
+
+DROP TABLE IF EXISTS Item;
+
+CREATE TABLE Item (
+	itemCode VARCHAR(6) NOT NULL,
+	description VARCHAR(50) NOT NULL,
+	packSize VARCHAR(20) DEFAULT NULL,
+	unitPrice DECIMAL(6,2) NOT NULL,
+	qtyOnHand INT(5) NOT NULL,
+  	CONSTRAINT PRIMARY KEY (itemCode)
+);
+
+--
+-- Dumping data for table Item
+--
+
+--
+-- Table structure for table Orders
+--
+
+DROP TABLE IF EXISTS Orders;
+
+CREATE TABLE Orders (
+	orderID VARCHAR(6) NOT NULL,
+	orderDate DATE DEFAULT NULL,
+	custID VARCHAR(6) DEFAULT NULL,
+  	CONSTRAINT PRIMARY KEY (orderID),
+  	KEY custID (custID),
+  	CONSTRAINT FOREIGN KEY (custID) REFERENCES Customer (custID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--
+-- Dumping data for table Orders
+--
+
+--
+-- Table structure for table OrderDetail
+--
+
+DROP TABLE IF EXISTS OrderDetail;
+
+CREATE TABLE OrderDetail (
+	orderID VARCHAR(6) NOT NULL,
+	itemCode varchar(6) NOT NULL,
+	orderQty INT(10) DEFAULT NULL,
+	discount DECIMAL(6,2) DEFAULT NULL,
+  	CONSTRAINT PRIMARY KEY (orderID, itemCode),
+  	KEY itemCode (itemCode),
+  	CONSTRAINT FOREIGN KEY (orderID) REFERENCES Orders (orderID) ON DELETE CASCADE ON UPDATE CASCADE,
+  	CONSTRAINT FOREIGN KEY (itemCode) REFERENCES Item (itemCode) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--
+-- Dumping data for table OrderDetail
+--
