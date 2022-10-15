@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="634.0" prefWidth="792.0"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="wholesale_business.controller.CustomerFormController">
+    <children>
+        <BorderPane prefHeight="528.0" prefWidth="731.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <AnchorPane prefHeight="67.0" prefWidth="761.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" style="-fx-background-color: #5C5D56;"
+                                    styleClass="flatAnchorWithEffect1"
+                                    stylesheets="@/wholesale_business/view/asset/style/Style.css"
+                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0"
+                                    AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="6.0">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="664.0"
+                                       text="MANAGE CUSTOMERS" textFill="#d9dbdd" AnchorPane.bottomAnchor="10.0"
+                                       AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                                       AnchorPane.topAnchor="10.0">
+                                    <font>
+                                        <Font name="Lucida Bright Demibold" size="32.0"/>
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="txtSearch" focusColor="#fde5aa" layoutX="517.0" layoutY="20.0"
+                                              onKeyPressed="#txtSearchKeyPressed" prefHeight="37.0" prefWidth="185.0"
+                                              promptText="Search "
+                                              style="-fx-prompt-text-fill: FDE5AA; -fx-text-fill: FDE5AA;"
+                                              unFocusColor="#fde5aa" AnchorPane.bottomAnchor="20.0"
+                                              AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font name="Lucida Sans Regular" size="16.0"/>
+                                    </font>
+                                </JFXTextField>
+                                <JFXButton fx:id="btnSearch" buttonType="RAISED" contentDisplay="CENTER" layoutX="702.0"
+                                           layoutY="20.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0"
+                                           minWidth="36.0" onAction="#btnSearchOnAction" prefHeight="36.0"
+                                           prefWidth="36.0" styleClass="searchButton"
+                                           stylesheets="@/wholesale_business/view/asset/style/Style.css"
+                                           textFill="#ffffff00" AnchorPane.bottomAnchor="20.0"
+                                           AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0"/>
+                                <JFXButton fx:id="btnRefresh" buttonType="RAISED" contentDisplay="CENTER" layoutX="14.0"
+                                           layoutY="20.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0"
+                                           minWidth="36.0" onAction="#btnRefreshOnAction" prefHeight="36.0"
+                                           prefWidth="36.0" styleClass="refreshButton"
+                                           stylesheets="@/wholesale_business/view/asset/style/Style.css"
+                                           textFill="#ffffff00"/>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </top>
+            <center>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: D1D2C4;"
+                            styleClass="flatAnchorWithEffect1"
+                            stylesheets="@/wholesale_business/view/asset/style/Style.css" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </BorderPane.margin>
+                    <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="374.0" prefWidth="297.0"
+                              AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
+                            <children>
+                                <JFXTextField fx:id="txtCusID" focusColor="BLACK" labelFloat="true"
+                                              onKeyReleased="#textFieldsKeyReleased" prefHeight="35.0" prefWidth="244.0"
+                                              promptText="Customer ID">
+                                    <VBox.margin>
+                                        <Insets left="6.0" right="6.0" top="30.0"/>
+                                    </VBox.margin>
+                                    <font>
+                                        <Font name="Lucida Fax Regular" size="15.0"/>
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="txtCusTitle" focusColor="BLACK" labelFloat="true" layoutX="16.0"
+                                              layoutY="16.0" onKeyReleased="#textFieldsKeyReleased" prefHeight="35.0"
+                                              prefWidth="244.0" promptText="Customer Title">
+                                    <font>
+                                        <Font name="Lucida Fax Regular" size="15.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="6.0" right="6.0" top="30.0"/>
+                                    </VBox.margin>
+                                </JFXTextField>
+                                <JFXTextField fx:id="txtCusName" focusColor="BLACK" labelFloat="true" layoutX="16.0"
+                                              layoutY="79.0" onKeyReleased="#textFieldsKeyReleased" prefHeight="35.0"
+                                              prefWidth="244.0" promptText="Customer Name">
+                                    <font>
+                                        <Font name="Lucida Fax Regular" size="15.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="6.0" right="6.0" top="30.0"/>
+                                    </VBox.margin>
+                                </JFXTextField>
+                                <JFXTextField fx:id="txtCusAddress" focusColor="BLACK" labelFloat="true"
+                                              onKeyReleased="#textFieldsKeyReleased" prefHeight="35.0" prefWidth="258.0"
+                                              promptText="Customer Address">
+                                    <font>
+                                        <Font name="Lucida Fax Regular" size="15.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="6.0" right="6.0" top="30.0"/>
+                                    </VBox.margin>
+                                </JFXTextField>
+                                <JFXTextField fx:id="txtCusCity" focusColor="BLACK" labelFloat="true" layoutX="10.0"
+                                              layoutY="179.0" onKeyReleased="#textFieldsKeyReleased" prefHeight="35.0"
+                                              prefWidth="244.0" promptText="City">
+                                    <font>
+                                        <Font name="Lucida Fax Regular" size="15.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="6.0" right="6.0" top="30.0"/>
+                                    </VBox.margin>
+                                </JFXTextField>
+                                <JFXTextField fx:id="txtCusProvince" focusColor="BLACK" labelFloat="true"
+                                              onKeyReleased="#textFieldsKeyReleased" prefHeight="35.0" prefWidth="244.0"
+                                              promptText="Province">
+                                    <font>
+                                        <Font name="Lucida Fax Regular" size="15.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="6.0" right="6.0" top="30.0"/>
+                                    </VBox.margin>
+                                </JFXTextField>
+                                <JFXTextField fx:id="txtCusPostalCode" focusColor="BLACK" labelFloat="true"
+                                              onKeyReleased="#textFieldsKeyReleased" prefHeight="35.0" prefWidth="244.0"
+                                              promptText="Postal Code">
+                                    <font>
+                                        <Font name="Lucida Fax Regular" size="15.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="6.0" right="6.0" top="30.0"/>
+                                    </VBox.margin>
+                                </JFXTextField>
+                                <HBox alignment="BOTTOM_LEFT" prefHeight="84.0" prefWidth="285.0" VBox.vgrow="ALWAYS">
+                                    <VBox.margin>
+                                        <Insets bottom="6.0" left="6.0" right="6.0" top="26.0"/>
+                                    </VBox.margin>
+                                    <children>
+                                        <JFXButton fx:id="btnAddNewCustomer" buttonType="RAISED" maxHeight="37.0"
+                                                   onAction="#btnAddNewOnAction" prefHeight="37.0" prefWidth="114.0"
+                                                   style="-fx-background-color: #A67000;" styleClass="allButtons"
+                                                   stylesheets="@/wholesale_business/view/asset/style/Style.css"
+                                                   text="Add New">
+                                            <font>
+                                                <Font name="System" size="15.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets bottom="6.0" left="6.0" right="6.0" top="16.0"/>
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnSave" buttonType="RAISED" maxHeight="37.0"
+                                                   onAction="#btnSaveOnAction" prefHeight="37.0" prefWidth="97.0"
+                                                   style="-fx-background-color: #A67000;" styleClass="allButtons"
+                                                   stylesheets="@/wholesale_business/view/asset/style/Style.css"
+                                                   text="Edit">
+                                            <font>
+                                                <Font name="System" size="15.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets bottom="6.0" left="6.0" right="6.0" top="16.0"/>
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnDelete" buttonType="RAISED" maxHeight="37.0"
+                                                   onAction="#btnDeleteOnAction" prefHeight="37.0" prefWidth="97.0"
+                                                   style="-fx-background-color: #A67000;" styleClass="allButtons"
+                                                   stylesheets="@/wholesale_business/view/asset/style/Style.css"
+                                                   text="Delete">
+                                            <font>
+                                                <Font name="System" size="15.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets bottom="6.0" left="6.0" right="6.0" top="16.0"/>
+                                            </HBox.margin>
+                                        </JFXButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" layoutX="364.0" layoutY="23.0" prefHeight="413.0" prefWidth="313.0"
+                              AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="332.0" AnchorPane.rightAnchor="16.0"
+                              AnchorPane.topAnchor="16.0">
+                            <children>
+                                <TableView fx:id="tblCustomers" prefHeight="441.0"
+                                           prefWidth="410.0" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" text="Customer ID"/>
+                                        <TableColumn prefWidth="75.0" text="Customer Title"/>
+                                        <TableColumn minWidth="7.0" prefWidth="75.0" text="Customer Name"/>
+                                        <TableColumn prefWidth="75.0" text="Customer Address"/>
+                                        <TableColumn prefWidth="75.0" text="City"/>
+                                        <TableColumn prefWidth="75.0" text="Province"/>
+                                        <TableColumn prefWidth="75.0" text="Postal Code"/>
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                    </columnResizePolicy>
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#menuDeleteOnAction"
+                                                          text="Delete"/>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
